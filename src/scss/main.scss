@@ -1,0 +1,182 @@
+@use "./base/colors" as *;
+@use "./base/typography";
+
+@use "./components/buttons";
+@use "./components/links";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  color: $text-dark-color;
+  background: $text-light-color;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+em {
+  color: $text-accent-color;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.logo {
+  display: block;
+  width: 100px;
+  height: 60px;
+  background: url(../assets/images/logo.png) center / cover no-repeat;
+}
+
+.header {
+  padding: 20px 0;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.navigation {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 40px;
+}
+
+.hero {
+  color: $text-light-color;
+
+  &__wrapper {
+    background: url("../assets/images/img-hero.jpg") center / cover no-repeat;
+    border-radius: 40px;
+    padding: 100px 0 100px 100px;
+  }
+
+  &__content {
+    max-width: 530px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+}
+
+.favorite {
+  &__wrapper {
+    text-align: center;
+  }
+}
+
+.slider {
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__content {
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__controls {
+    font-size: 0;
+    display: flex;
+    line-height: 0;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+.about {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    text-align: justify;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 430px 120px 430px;
+    gap: 40px;
+    grid-template-areas:
+      "about1 about3"
+      "about1 about4"
+      "about2 about4";
+  }
+
+  &__item-1 {
+    grid-area: about1;
+  }
+
+  &__item-2 {
+    grid-area: about2;
+  }
+
+  &__item-3 {
+    grid-area: about3;
+  }
+
+  &__item-4 {
+    grid-area: about4;
+  }
+
+  &__item-1,
+  &__item-2,
+  &__item-3,
+  &__item-4 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+}
