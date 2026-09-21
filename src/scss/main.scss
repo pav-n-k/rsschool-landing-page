@@ -6,6 +6,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -18,6 +19,9 @@ body {
   margin: 0;
   color: $text-dark-color;
   background: $text-light-color;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 img {
@@ -56,6 +60,7 @@ ul {
   flex-direction: column;
   gap: 100px;
   margin-bottom: 100px;
+  flex: 1;
 }
 
 .logo {
@@ -212,6 +217,7 @@ ul {
 }
 
 .footer {
+  padding-bottom: 40px;
 
   &__wrapper {
     display: flex;
