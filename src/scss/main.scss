@@ -41,6 +41,11 @@ select {
   font: inherit;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   max-width: 1360px;
   margin: 0 auto;
@@ -50,6 +55,7 @@ select {
   display: flex;
   flex-direction: column;
   gap: 100px;
+  margin-bottom: 100px;
 }
 
 .logo {
@@ -203,4 +209,45 @@ select {
     display: flex;
     gap: 20px;
   }
+}
+
+.footer {
+
+  &__wrapper {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    padding: 100px;
+    background-color: $background-container-color;
+    border-radius: 40px;
+  }
+
+  &__content {
+    flex: 0 1 530px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.contact-us {
+  flex: 0 1 530px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__links {
+    cursor: pointer;
+    list-style-type: none;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
 }

@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -18,9 +20,11 @@ p {
   font-size: 72px;
   font-weight: 600;
   line-height: 105%;
-  &--accent {
-    font-style: italic;
+
+  &--light {
+    color: $text-light-color;
   }
+
   @media (max-width: 381px) {
     font-size: 42px;
     line-height: 115%;
@@ -31,9 +35,11 @@ p {
   font-size: 60px;
   font-weight: 600;
   line-height: 125%;
-  &--accent {
-    font-style: italic;
+
+  &--light {
+    color: $text-light-color;
   }
+
   @media (max-width: 381px) {
     font-size: 32px;
   }
@@ -43,6 +49,10 @@ p {
   font-size: 24px;
   font-weight: 600;
   line-height: 125%;
+
+  &--light {
+    color: $text-light-color;
+  }
 }
 
 .caption {

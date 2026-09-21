@@ -20,20 +20,25 @@
     color 0.4s ease;
 
   &--primary {
-    padding: 20px 78px;
+    padding: 20px 58px 20px 78px;
     border-radius: 100px;
     background: $text-light-color;
     color: $text-dark-color;
+    gap: 8px;
+
+    &:hover .icon-coffee {
+      background-color: $text-dark-color;
+    }
   }
 
   &--secondary {
-    padding: 20px 78px;
-    border-radius: 100px;
-    border: 1px solid $background-container-color;
     padding: 10px 78px;
+    border-radius: 100px;
+    background-color: transparent;
+    border: 1px solid $background-container-color;
 
     &:hover {
-      background: $background-container-color;
+      background-color: $background-container-color;
       color: $text-light-color;
     }
   }
@@ -41,31 +46,39 @@
   &--app-store,
   &--google-play {
     border: 1px solid $background-container-color;
-    padding: 12px 44px 12px 64px;
+    padding: 12px 44px 12px 20px;
     justify-content: flex-start;
     border-radius: 32px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
+    align-items: center;
+    gap: 8px;
 
-    &>span:first-child {
-      font-size: 10px;
-      line-height: 140%;
+    &:hover {
+      background-color: $background-container-color;
+      color: $text-light-color;
     }
 
-    &>span:last-child {
-      font-size: 16px;
+    &:hover .icon-google-play {
+      background-color: $text-light-color;
+    }
+
+    &:hover .icon-app-store {
+      background-color: $text-light-color;
     }
   }
 
-  &--app-store {
-    padding-right: 58px;
-    background: url(../../assets/icons/apple-icon.svg) left 20px center no-repeat;
+  &__text {
+    text-align: left;
   }
 
-  &--google-play {
-    padding-right: 58px;
-    background: url(../../assets/icons/google-play-icon.svg) left 20px center no-repeat;
+  &__text-top {
+    display: block;
+    font-size: 10px;
+    line-height: 140%;
+  }
+
+  &__text-bottom {
+    display: block;
+    font-size: 16px;
   }
 
   &--icon-dark {
@@ -77,7 +90,16 @@
     background: transparent;
 
     &:hover {
-      background: $background-container-color;
+      background-color: $background-container-color;
+
+      & .icon-left-slide {
+        background-color: $text-light-color;
+      }
+
+      & .icon-right-slide {
+        background-color: $text-light-color;
+      }
+
     }
   }
 
@@ -87,9 +109,23 @@
     border: 1px solid $border-light-color;
     border-radius: 50%;
     padding: 18px;
+    color: $text-light-color;
 
     &:hover {
-      background: $text-light-color;
+      border: 1px solid $text-light-color;
+      background-color: $text-light-color;
+
+      & .icon-instagram {
+        background-color: $text-dark-color;
+      }
+
+      & .icon-twitter {
+        background-color: $text-dark-color;
+      }
+
+      & .icon-facebook {
+        background-color: $text-dark-color;
+      }
     }
   }
 
@@ -110,9 +146,96 @@
     width: 40px;
     height: 4px;
     border-radius: 2px;
+    background-color: $border-light-color;
+
+    &:first-child {
+      background-color: $background-container-color;
+    }
 
     &:hover {
       background-color: $background-container-color;
     }
   }
+}
+
+.icon-left-slide,
+.icon-right-slide {
+  width: 24px;
+  height: 24px;
+  transition: background-color 0.4s ease;
+  background-color: $text-dark-color;
+}
+
+.icon-left-slide {
+  mask: url("../../assets/icons/arrow-left.svg") center / contain no-repeat;
+}
+
+.icon-right-slide {
+  mask: url("../../assets/icons/arrow-right.svg") center / contain no-repeat;
+}
+
+.icon-google-play,
+.icon-app-store {
+  width: 36px;
+  height: 36px;
+  transition: background-color 0.4s ease;
+  background-color: $text-dark-color;
+}
+
+.icon-google-play {
+  mask: url("../../assets/icons/google-play-icon.svg") center / contain no-repeat;
+}
+
+.icon-app-store {
+  mask: url("../../assets/icons/apple-icon.svg") center / contain no-repeat;
+}
+
+.icon-coffee {
+  width: 20px;
+  height: 20px;
+  transition: background-color 0.4s ease;
+  background-color: transparent;
+  mask: url("../../assets/icons/coffee-cup.svg") center / contain no-repeat;
+}
+
+.icon-map,
+.icon-clock,
+.icon-phone {
+  width: 20px;
+  height: 20px;
+  transition: background-color 0.4s ease;
+  background-color: $text-light-color;
+}
+
+.icon-map {
+  mask: url("../../assets/icons/pin-alt.svg") center / contain no-repeat;
+}
+
+.icon-phone {
+  mask: url("../../assets/icons/phone.svg") center / contain no-repeat;
+}
+
+.icon-clock {
+  mask: url("../../assets/icons/clock.svg") center / contain no-repeat;
+}
+
+.icon-instagram,
+.icon-twitter,
+.icon-facebook {
+  width: 24px;
+  height: 24px;
+  transition: background-color 0.4s ease;
+  background-color: $text-light-color;
+}
+
+.icon-instagram {
+  mask: url("../../assets/icons/instagram.svg") center / contain no-repeat;
+}
+
+.icon-twitter {
+  mask: url("../../assets/icons/twitter.svg") center / contain no-repeat;
+}
+
+.icon-facebook {
+  mask: url("../../assets/icons/facebook.svg") center / contain no-repeat;
 }
