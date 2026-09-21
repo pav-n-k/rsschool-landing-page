@@ -180,3 +180,27 @@ select {
     border-radius: 20px;
   }
 }
+
+.mobile-app {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__images {
+    flex: 1;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+}
