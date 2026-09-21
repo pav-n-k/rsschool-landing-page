@@ -32,6 +32,7 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+  display: block;
 }
 
 em {
@@ -256,4 +257,51 @@ ul {
   display: flex;
   gap: 12px;
   cursor: pointer;
+}
+
+.menu {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+
+    & .title-2 {
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 125px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+.card {
+  flex: 0 1 310px;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 40px;
+  border: 1px solid $border-light-color;
+
+  &__image {
+    border-radius: 40px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
 }
