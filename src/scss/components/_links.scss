@@ -41,7 +41,11 @@
       background: url(../../assets/icons/coffee-cup.svg) center / contain no-repeat;
     }
 
-    &:active {
+    &:hover {
+      border-bottom: 2px solid $text-dark-color;
+    }
+
+    &.menu-link-active {
       border-bottom: 2px solid $text-dark-color;
     }
   }

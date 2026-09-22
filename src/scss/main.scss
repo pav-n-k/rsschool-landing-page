@@ -269,7 +269,6 @@ ul {
     & .title-2 {
       max-width: 800px;
       text-align: center;
-      margin-bottom: 125px;
     }
   }
 
@@ -277,6 +276,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 16px;
   }
 
   &__cards {
@@ -301,7 +301,15 @@ ul {
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 12px;
     padding: 20px;
+    min-height: 196px;
+  }
+
+  &__price {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
   }
 }

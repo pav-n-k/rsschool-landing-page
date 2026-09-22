@@ -17,7 +17,8 @@
   cursor: pointer;
   transition:
     background-color 0.4s ease,
-    color 0.4s ease;
+    color 0.4s ease,
+    border-color 0.4s ease;
 
   &--primary {
     padding: 20px 58px 20px 78px;
@@ -156,6 +157,44 @@
       background-color: $background-container-color;
     }
   }
+
+  &--tab {
+    border: 1px solid $border-light-color;
+    border-radius: 23px;
+    padding: 8px 16px 8px 8px;
+    color: $text-dark-color;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover,
+    &:active {
+      background-color: $background-container-color;
+      color: $text-light-color;
+      border-color: transparent;
+    }
+  }
+}
+
+.icon-coffee-tab,
+.icon-tea-tab,
+.icon-dessert-tab {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transition: background-color 0.4s ease;
+}
+
+.icon-coffee-tab {
+  background: url("../../assets/icons/icon-coffee-tab.png") center / contain no-repeat;
+}
+
+.icon-tea-tab {
+  background: url("../../assets/icons/icon-tea-tab.png") center / contain no-repeat;
+}
+
+.icon-dessert-tab {
+  background: url("../../assets/icons/icon-dessert-tab.png") center / contain no-repeat;
 }
 
 .icon-left-slide,
