@@ -1,4 +1,5 @@
 @use "../base/colors" as *;
+@use "../base/breakpoints" as *;
 
 .link {
   display: inline-flex;
@@ -47,6 +48,10 @@
 
     &.menu-link-active {
       border-bottom: 2px solid $text-dark-color;
+    }
+
+    @include breakpoint('lg') {
+      display: none;
     }
   }
 }

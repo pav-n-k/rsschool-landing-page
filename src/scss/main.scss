@@ -1,5 +1,6 @@
 @use "./base/colors" as *;
 @use "./base/typography";
+@use "./base/breakpoints" as *;
 
 @use "./components/buttons";
 @use "./components/links";
@@ -54,6 +55,10 @@ ul {
 .container {
   max-width: 1360px;
   margin: 0 auto;
+
+  @include breakpoint('xl') {
+    padding: 0 40px;
+  }
 }
 
 .main {
@@ -86,6 +91,10 @@ ul {
   list-style-type: none;
   justify-content: center;
   gap: 40px;
+
+  @include breakpoint('lg') {
+    display: none;
+  }
 }
 
 .hero {
@@ -163,22 +172,14 @@ ul {
       "about1 about3"
       "about1 about4"
       "about2 about4";
-  }
 
-  &__item-1 {
-    grid-area: about1;
-  }
-
-  &__item-2 {
-    grid-area: about2;
-  }
-
-  &__item-3 {
-    grid-area: about3;
-  }
-
-  &__item-4 {
-    grid-area: about4;
+    @include breakpoint('md') {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        "about1"
+        "about4";
+    }
   }
 
   &__item-1,
@@ -191,6 +192,30 @@ ul {
     object-fit: cover;
     border-radius: 20px;
   }
+
+  &__item-1 {
+    grid-area: about1;
+  }
+
+  &__item-2 {
+    grid-area: about2;
+
+    @include breakpoint('md') {
+      display: none;
+    }
+  }
+
+  &__item-3 {
+    grid-area: about3;
+
+    @include breakpoint('md') {
+      display: none;
+    }
+  }
+
+  &__item-4 {
+    grid-area: about4;
+  }
 }
 
 .mobile-app {
@@ -198,6 +223,10 @@ ul {
     display: flex;
     align-items: center;
     gap: 100px;
+
+    @include breakpoint('lg') {
+      flex-direction: column;
+    }
   }
 
   &__content {
@@ -227,6 +256,12 @@ ul {
     padding: 100px;
     background-color: $background-container-color;
     border-radius: 40px;
+
+    @include breakpoint('lg') {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 100px 60px;
+    }
   }
 
   &__content {
@@ -234,6 +269,10 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @include breakpoint('lg') {
+      flex: 1;
+    }
   }
 }
 
@@ -242,6 +281,10 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @include breakpoint('lg') {
+    flex: 1;
+  }
 
   &__links {
     cursor: pointer;
@@ -280,14 +323,14 @@ ul {
   }
 
   &__cards {
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 40px;
   }
 }
 
 .card {
-  flex: 0 1 310px;
   display: flex;
   flex-direction: column;
 

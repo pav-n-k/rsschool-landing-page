@@ -1,4 +1,5 @@
 @use "../base/colors" as *;
+@use "../base/breakpoints" as *;
 
 .button {
   display: flex;
@@ -131,15 +132,19 @@
   }
 
   &--icon-burger {
+    display: none;
     border: 1px solid $background-container-color;
     border-radius: 50%;
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 125%;
+    width: 44px;
+    height: 44px;
     background: url(../../assets/icons/burger-default.svg) center / 16px 8px no-repeat;
 
     &:active {
       background: url(../../assets/icons/burger-active.svg) center / 12px no-repeat;
+    }
+
+    @include breakpoint('lg') {
+      display: block;
     }
   }
 
