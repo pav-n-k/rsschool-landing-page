@@ -1,0 +1,57 @@
+@use "../base/colors" as *;
+@use "../base/breakpoints" as *;
+
+.link {
+  display: inline-flex;
+  gap: 8px;
+
+  color: inherit;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+
+  border-bottom: 2px solid transparent;
+
+  transition: border-bottom 0.4s ease;
+
+  &:hover {
+    border-bottom: 2px solid $text-dark-color;
+  }
+
+  &--light {
+    color: $text-light-color;
+
+    &:hover {
+      border-bottom: 2px solid $text-light-color;
+    }
+  }
+
+  &--menu {
+    color: $text-dark-color;
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url(../../assets/icons/coffee-cup.svg) center / contain no-repeat;
+    }
+
+    &:hover {
+      border-bottom: 2px solid $text-dark-color;
+    }
+
+    &.menu-link-active {
+      border-bottom: 2px solid $text-dark-color;
+    }
+
+    @include breakpoint('lg') {
+      display: none;
+    }
+  }
+}

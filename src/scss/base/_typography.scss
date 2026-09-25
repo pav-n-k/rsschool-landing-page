@@ -1,0 +1,62 @@
+@use "./colors" as *;
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.title-1 {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 105%;
+
+  &--light {
+    color: $text-light-color;
+  }
+
+  @media (max-width: 381px) {
+    font-size: 42px;
+    line-height: 115%;
+  }
+}
+
+.title-2 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 125%;
+
+  &--light {
+    color: $text-light-color;
+  }
+
+  @media (max-width: 381px) {
+    font-size: 32px;
+  }
+}
+
+.title-3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+
+  &--light {
+    color: $text-light-color;
+  }
+}
+
+.caption {
+  font-size: 10px;
+  line-height: 140%;
+  font-weight: 600;
+}
